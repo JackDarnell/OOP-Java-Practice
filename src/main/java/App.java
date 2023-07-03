@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.TreeMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
@@ -118,7 +119,7 @@ public class App
         //Sort tasks by due date, then if tasks share the same date sort by priority
         //then print the tasks in order to be completed
         //use dict to store tasks with the date as the key and an array list of tasks as the value
-        Hashtable<LocalDate, ArrayList<Task>> my_dict = new Hashtable<LocalDate, ArrayList<Task>>();
+        TreeMap<LocalDate, ArrayList<Task>> my_dict = new TreeMap<>();
         for(int i = 0; i < tasks.size(); i++) {
             if(my_dict.containsKey(tasks.get(i).getDueDate())) { //if the key already exists just add to the arraylist.
                 my_dict.get(tasks.get(i).getDueDate()).add(tasks.get(i));
