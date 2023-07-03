@@ -6,3 +6,4 @@ A simple terminal app for creating tasks and sorting them by due date, priority,
 
 - Move different task list sorting and printing methods out of the App.java file and over to a new TaskList.java class file.
 - finish implementing different task sorting algos.
+- add more robust error handling.
