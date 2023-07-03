@@ -24,6 +24,12 @@ public class App
                 printTasksUnordered();
             } else if (opt.equals("q")){
                 running = false;
+            } else if (opt.equals("populate")){
+                //populate fake data
+                for(int i = 0; i < 5; i++){
+                    Task newTask = new Task("test" + i, "test", Priority.HIGH, 2 + i, LocalDate.of(2022+i, 1, 1));
+                    tasks.add(newTask);
+                }
             }
         }
           // Create a Scanner object
@@ -76,7 +82,7 @@ public class App
 
     static void printTasksUnordered() {
         for(int i = 0; i < tasks.size(); i++) {
-            System.out.println(tasks.get(i));
+            System.out.println("\nTask #" + i + ":\n\nName: " + tasks.get(i).getName() + "\nDescription: " + tasks.get(i).getDescription()+"\nEstimated Hours:" + tasks.get(i).getEsitmatedHours() +"\nDue Date: "+ tasks.get(i).getDueDate());
         }
     }
 }
