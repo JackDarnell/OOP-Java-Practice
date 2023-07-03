@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 public class Task {
 
@@ -5,13 +6,15 @@ public class Task {
     private String description;
     private Priority priority;
     private int estimatedHours;
+    private LocalDate dueDate;
 
     //constructor
-    public Task(String name, String description, Priority priority, int estimatedHours) {
+    public Task(String name, String description, Priority priority, int estimatedHours, LocalDate dueDate) {
         this.name = name;
         this.description = description;
         this.priority = priority;
         this.estimatedHours = estimatedHours;
+        this.dueDate = dueDate;
     }
 
     //getters
@@ -31,6 +34,10 @@ public class Task {
         return estimatedHours;
     }
 
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
     //setters
     public void setName(String name) {
         this.name = name;
@@ -46,5 +53,9 @@ public class Task {
 
     public void setEstimatedHours(int estimatedHours){
         this.estimatedHours = estimatedHours;
+    }
+
+    public void setDueDate(LocalDate dueDate){
+        this.dueDate = dueDate;
     }
 }
