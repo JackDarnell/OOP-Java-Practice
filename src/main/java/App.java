@@ -3,7 +3,6 @@ import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Hashtable;
 import java.util.concurrent.ThreadLocalRandom;
 
 //options:
