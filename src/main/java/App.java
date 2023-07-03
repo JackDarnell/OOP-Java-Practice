@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 //options:
 //create task, print tasks by earliest due date, print tasks by priority, print tasks by highest/lowest estimated hours, help
@@ -30,7 +31,9 @@ public class App
                     Task newTask = new Task("test" + i, "test", Priority.HIGH, 2 + i, LocalDate.of(2022+i, 1, 1));
                     tasks.add(newTask);
                 }
-            }
+            } else if(opt.equals("p date")){
+                sortTasksByDate();
+            } 
         }
           // Create a Scanner object
     }
@@ -80,9 +83,14 @@ public class App
         tasks.add(newTask);
     }
 
+    static void sortTasksByDate() {
+        Collections.sort(tasks, new TaskSortingComparator());
+        printTasksUnordered();
+    }
+
     static void printTasksUnordered() {
         for(int i = 0; i < tasks.size(); i++) {
-            System.out.println("\nTask #" + i + ":\n\nName: " + tasks.get(i).getName() + "\nDescription: " + tasks.get(i).getDescription()+"\nEstimated Hours:" + tasks.get(i).getEsitmatedHours() +"\nDue Date: "+ tasks.get(i).getDueDate());
+            System.out.println("\nTask #" + i + ":\n\nName: " + tasks.get(i).getName() + "\nDescription: " + tasks.get(i).getDescription()+"\nEstimated Hours: " + tasks.get(i).getEsitmatedHours() +"\nDue Date: "+ tasks.get(i).getDueDate());
         }
     }
 }
